@@ -12,7 +12,8 @@ The entire site is one self-contained file: `index.html` (~1335 lines). There is
 
 - **CSS**: inline in a single `<style>` block (roughly lines 10–871).
 - **JS**: inline in a single `<script>` block at the end (~lines 1313–1331). Two behaviors: an `IntersectionObserver` that toggles `.visible` on `.reveal` elements, and a scroll listener that shrinks the nav padding past 40px.
-- **External assets**: Google Fonts only (`Fraunces`, `DM Sans`). No bundler, no JS framework.
+- **Fonts**: served locally. `fonts.css` declares the `@font-face` rules and points at `fonts/*.woff2` (Fraunces variable + DM Sans, fetched from Google Fonts and committed). No external font request at runtime.
+- **No bundler, no JS framework, no external assets at runtime.**
 
 ## Running / previewing
 
