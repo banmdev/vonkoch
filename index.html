@@ -7,22 +7,24 @@
 <link rel="stylesheet" href="fonts.css">
 <style>
   :root {
-    --cream: #F2ECE8;
-    --cream-deep: #E8DFDC;
-    --paper: #FAF5F3;
-    --blush: #F3E2E2;
-    --ink: #1A2128;
-    --ink-soft: #3A434C;
-    --muted: #8A8A90;
-    --petrol: #1F4B5A;
-    --petrol-deep: #143642;
-    --petrol-mid: #2E6677;
-    --petrol-light: #B8D0D6;
-    --rose: #D4A9AC;
-    --rose-deep: #B88B91;
-    --rose-light: #EDD5D8;
+    --cream: #F4EFEB;
+    --cream-deep: #EBE3DE;
+    --paper: #FBF7F4;
+    --blush: #F4E4E4;
+    --ink: #1F2730;
+    --ink-soft: #44505A;
+    --muted: #909097;
+    --petrol: #5C8893;
+    --petrol-deep: #3D6873;
+    --petrol-mid: #76A1AC;
+    --petrol-light: #CCDFE3;
+    --blue-soft: #A6BFC9;
+    --blue-mist: #D5E1E7;
+    --rose: #DCB5B8;
+    --rose-deep: #BF9499;
+    --rose-light: #F0DCDE;
     --gold: #C89B7B;
-    --line: rgba(26, 33, 40, 0.1);
+    --line: rgba(31, 39, 48, 0.09);
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -126,12 +128,12 @@
     letter-spacing: 0.06em;
     text-transform: uppercase;
     border-radius: 100px;
-    box-shadow: 0 4px 14px -4px rgba(31, 75, 90, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 14px -4px rgba(61, 104, 115, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.15);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   .nav-cta:hover {
     transform: translateY(-1px);
-    box-shadow: 0 8px 20px -4px rgba(31, 75, 90, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 20px -4px rgba(61, 104, 115, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
   }
 
   /* Hero */
@@ -200,12 +202,37 @@
     padding: 0 4px;
   }
 
+  .hero-quote {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 21px;
+    line-height: 1.45;
+    color: var(--ink-soft);
+    max-width: 560px;
+    margin-bottom: 36px;
+    padding: 4px 0 4px 18px;
+    border-left: 2px solid var(--rose);
+  }
+  .hero-quote::before {
+    content: '✦';
+    font-style: normal;
+    color: var(--rose-deep);
+    font-size: 13px;
+    margin-right: 8px;
+    vertical-align: 2px;
+  }
+
   .hero-sub {
     font-size: 19px;
     max-width: 540px;
     color: var(--ink-soft);
     margin-bottom: 48px;
     line-height: 1.55;
+  }
+  .hero-sub strong {
+    font-weight: 500;
+    color: var(--ink);
   }
 
   .hero-actions { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
@@ -221,7 +248,7 @@
     display: inline-flex;
     align-items: center;
     gap: 12px;
-    box-shadow: 0 8px 24px -8px rgba(31, 75, 90, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 24px -8px rgba(61, 104, 115, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     overflow: hidden;
@@ -235,7 +262,7 @@
   }
   .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 14px 32px -8px rgba(31, 75, 90, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    box-shadow: 0 14px 32px -8px rgba(61, 104, 115, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.25);
   }
   .btn-primary svg { width: 14px; height: 14px; transition: transform 0.3s ease; position: relative; z-index: 1; }
   .btn-primary:hover svg { transform: translateX(4px); }
@@ -260,7 +287,7 @@
     border-radius: 18px;
     overflow: hidden;
     box-shadow:
-      0 40px 80px -30px rgba(31, 75, 90, 0.4),
+      0 40px 80px -30px rgba(61, 104, 115, 0.4),
       0 0 0 1px rgba(26, 33, 40, 0.06),
       inset 0 1px 0 rgba(255, 255, 255, 0.3);
   }
@@ -296,7 +323,7 @@
     color: var(--ink);
     max-width: 270px;
     line-height: 1.45;
-    box-shadow: 0 20px 40px -20px rgba(31, 75, 90, 0.25);
+    box-shadow: 0 20px 40px -20px rgba(61, 104, 115, 0.25);
     z-index: 3;
   }
   .portrait-label::before {
@@ -473,6 +500,70 @@
   }
   .badge:hover { border-color: var(--rose-deep); color: var(--rose-deep); }
 
+  /* Vier-Bausteine-Liste in Praxis-Sektion */
+  .pillar-list {
+    display: grid;
+    gap: 22px;
+    margin: 40px 0 36px;
+    max-width: 620px;
+  }
+  .pillar-item {
+    padding: 22px 24px 22px 26px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--petrol);
+    border-radius: 14px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+  .pillar-item:hover {
+    transform: translateX(2px);
+    border-left-color: var(--rose-deep);
+  }
+  .pillar-item h4 {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 19px;
+    margin-bottom: 8px;
+    color: var(--ink);
+    letter-spacing: -0.005em;
+  }
+  .pillar-item h4 .label {
+    color: var(--petrol);
+    font-style: italic;
+    font-weight: 300;
+  }
+  .pillar-item p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+  .benefit-card {
+    margin-top: 28px;
+    padding: 26px 28px;
+    background: linear-gradient(135deg, var(--blush) 0%, var(--blue-mist) 100%);
+    border-radius: 18px;
+    border: 1px solid var(--line);
+  }
+  .benefit-card .benefit-label {
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--petrol);
+    font-weight: 500;
+    margin-bottom: 10px;
+    display: block;
+  }
+  .benefit-card p {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 19px;
+    line-height: 1.5;
+    color: var(--ink);
+    margin: 0;
+  }
+
   /* Leistungen */
   .services {
     background: linear-gradient(180deg, var(--blush) 0%, var(--cream-deep) 100%);
@@ -504,22 +595,56 @@
   .services-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 24px;
     position: relative;
     z-index: 1;
   }
   .service {
     background: var(--paper);
-    padding: 40px 32px;
+    padding: 44px 36px 38px;
     position: relative;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
-    min-height: 340px;
+    min-height: 460px;
     display: flex;
     flex-direction: column;
     border-radius: 22px;
-    border: 1px solid rgba(26, 33, 40, 0.06);
-    box-shadow: 0 4px 20px -12px rgba(31, 75, 90, 0.15);
+    border: 1px solid rgba(31, 39, 48, 0.06);
+    box-shadow: 0 4px 20px -12px rgba(61, 104, 115, 0.15);
     overflow: hidden;
+  }
+  .service-tagline {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 1.45;
+    color: var(--petrol);
+    margin-bottom: 18px;
+    position: relative;
+    z-index: 1;
+  }
+  .service-detail {
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+    flex-grow: 1;
+    position: relative;
+    z-index: 1;
+  }
+  .service-detail strong {
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .service-disclaimer {
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--muted);
+    font-style: italic;
+    position: relative;
+    z-index: 1;
   }
   .service::before {
     content: '';
@@ -532,7 +657,7 @@
   }
   .service:hover {
     transform: translateY(-4px);
-    box-shadow: 0 24px 48px -20px rgba(31, 75, 90, 0.25);
+    box-shadow: 0 24px 48px -20px rgba(61, 104, 115, 0.25);
   }
   .service-num {
     font-family: 'Fraunces', serif;
@@ -874,7 +999,7 @@
   <div class="logo">Katharina <span>von Koch</span></div>
   <ul class="nav-links">
     <li><a href="#praxis">Praxis</a></li>
-    <li><a href="#leistungen">Wege</a></li>
+    <li><a href="#leistungen">Säulen</a></li>
     <li><a href="#netzwerk">Netzwerk</a></li>
     <li><a href="#vita">Werden</a></li>
     <li><a href="#kontakt">Kontakt</a></li>
@@ -888,23 +1013,26 @@
   <div class="blob blob-2"></div>
 
   <div class="hero-content reveal">
-    <div class="hero-eyebrow">Privatpraxis · Ganzheitliche Zahnmedizin</div>
+    <div class="hero-eyebrow">Privatpraxis · Halle (Saale)</div>
+    <p class="hero-quote">
+      Die Mundhöhle erzählt Geschichten des Körpers — wer genau hinsieht, erkennt die Krankheit, bevor sie spricht.
+    </p>
     <h1>
-      Der Mund<br>
-      <span class="italic">weiß</span>, was wir<br>
-      <span class="rose-underline">vergessen</span> haben.
+      <span class="italic">Integrativ.</span><br>
+      <span class="rose-underline">Non&#8209;invasiv.</span><br>
+      Ganzheitlich.
     </h1>
     <p class="hero-sub">
-      Eine Praxis für Dentosophie, Umweltzahnmedizin und angewandte Kinesiologie in Halle an der Saale. In meiner Sprechstunde wird nicht gebohrt und nicht operiert. Wo restaurative oder chirurgische Schritte nötig sind, koordiniere ich die Behandlung mit ausgewählten Kolleg:innen — und bleibe für Sie Ansprechpartnerin.
+      <strong>Dr. med. dent. Katharina von Koch</strong> — Zahnärztin für Dentosophie, angewandte Kinesiologie und Umweltzahnmedizin in Halle an der Saale.
     </p>
     <div class="hero-actions">
       <a href="#kontakt" class="btn-primary">
-        Sprechstunde anfragen
+        Termin vereinbaren
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5">
           <path d="M1 7h12M8 2l5 5-5 5"/>
         </svg>
       </a>
-      <a href="#leistungen" class="btn-text">Was ich anbiete</a>
+      <a href="#leistungen" class="btn-text">Drei Säulen meiner Arbeit</a>
     </div>
   </div>
 
@@ -927,64 +1055,79 @@
 <div class="marquee">
   <div class="marquee-track">
     <div class="marquee-item">Dentosophie</div>
+    <div class="marquee-item">Kinesiologie</div>
     <div class="marquee-item">Umweltzahnmedizin</div>
-    <div class="marquee-item">Angewandte Kinesiologie</div>
-    <div class="marquee-item">Myofunktionelle Therapie</div>
-    <div class="marquee-item">Bioaktivator</div>
-    <div class="marquee-item">Materialverträglichkeit</div>
-    <div class="marquee-item">Herddiagnostik</div>
+    <div class="marquee-item">Kieferbalance</div>
+    <div class="marquee-item">Hilfe zur Selbsthilfe</div>
+    <div class="marquee-item">Biokompatibilität</div>
     <div class="marquee-item">Atemregulation</div>
+    <div class="marquee-item">Aufrichtung</div>
     <div class="marquee-item">Dentosophie</div>
+    <div class="marquee-item">Kinesiologie</div>
     <div class="marquee-item">Umweltzahnmedizin</div>
-    <div class="marquee-item">Angewandte Kinesiologie</div>
-    <div class="marquee-item">Myofunktionelle Therapie</div>
-    <div class="marquee-item">Bioaktivator</div>
-    <div class="marquee-item">Materialverträglichkeit</div>
-    <div class="marquee-item">Herddiagnostik</div>
+    <div class="marquee-item">Kieferbalance</div>
+    <div class="marquee-item">Hilfe zur Selbsthilfe</div>
+    <div class="marquee-item">Biokompatibilität</div>
     <div class="marquee-item">Atemregulation</div>
+    <div class="marquee-item">Aufrichtung</div>
   </div>
 </div>
 
-<!-- Philosophie -->
+<!-- Praxis / Über mich -->
 <section id="praxis">
   <div class="philosophy">
     <div class="philosophy-left reveal">
-      <div class="section-eyebrow">Haltung</div>
-      <div class="philosophy-number">✦ Grundgedanke</div>
-      <h2 class="section-title">Ein Zahn erzählt <span class="rose">selten</span> nur von sich.</h2>
+      <div class="section-eyebrow">Praxis</div>
+      <div class="philosophy-number">✦ Warum zu mir?</div>
+      <h2 class="section-title">Ihr Weg aus dem <span class="rose">Kreislauf</span> chronischer Beschwerden.</h2>
       <div class="badges">
-        <span class="badge">Noninvasiv</span>
-        <span class="badge">Privatpraxis</span>
-        <span class="badge">Interdisziplinär</span>
-        <span class="badge">Prävention</span>
+        <span class="badge">Non-invasiv</span>
+        <span class="badge">Integrativ</span>
+        <span class="badge">Ursachenbezogen</span>
+        <span class="badge">Hilfe zur Selbsthilfe</span>
       </div>
     </div>
     <div class="philosophy-right reveal">
       <p>
-        Ganzheitliche Zahnmedizin beginnt mit einer einfachen Überzeugung: Der Mund ist kein isoliertes Arbeitsfeld. Wie wir atmen, wie die Zunge liegt, welche Materialien wir tragen, wie der Kiefer sich entwickelt hat — all das steht in Verbindung mit Haltung, Schlaf, Verdauung und dem Nervensystem.
+        Viele meiner Patient:innen haben eine lange Odyssee hinter sich. Sie leiden unter Verspannungen, Schlafstörungen oder chronischer Erschöpfung — doch die klassische Zahnmedizin findet oft keine Antwort. Hier setzt mein integrativer Ansatz an:
       </p>
-      <p>
-        Meine Arbeit ist bewusst <strong>noninvasiv</strong>. Ich bohre nicht, extrahiere nicht, operiere nicht. Stattdessen arbeite ich mit der <strong>Dentosophie</strong> nach Dr. Michel Montaud, mit Prinzipien der <strong>Umweltzahnmedizin</strong> und mit <strong>angewandter Kinesiologie</strong> — immer dort ansetzend, wo der Körper selbst regulieren kann.
-      </p>
-      <div class="pull-quote">
-        Heilung beginnt nicht dort, wo wir eingreifen — sondern dort, wo wir aufhören zu drängen.
+
+      <div class="pillar-list">
+        <div class="pillar-item">
+          <h4><span class="label">Ursache statt Reparatur.</span></h4>
+          <p>Als Oralchirurgin sehe ich die anatomischen Details — als ganzheitliche Behandlerin suche ich das „Warum". Ich helfe Ihnen zu verstehen, was Ihr Körper Ihnen durch Ihre Zähne mitteilen möchte.</p>
+        </div>
+        <div class="pillar-item">
+          <h4><span class="label">Aktiv statt passiv.</span></h4>
+          <p>Das Herzstück meiner Arbeit ist die Hilfe zur Selbsthilfe. Mit der Dentosophie und einem speziellen Aktivator (Balancer) erhalten Sie ein Werkzeug, mit dem Sie Ihre Gesundheit selbst in die Hand nehmen. Sanfte Impulse ordnen das Zusammenspiel von Kiefer, Atmung und Haltung neu — ganz ohne invasive Eingriffe.</p>
+        </div>
+        <div class="pillar-item">
+          <h4><span class="label">Sicherheit durch Kinesiologie.</span></h4>
+          <p>Wir testen individuell, was Ihr System stärkt oder belastet. So vermeiden wir langwieriges Ausprobieren und finden direkt den Weg, der für Ihren Körper funktioniert.</p>
+        </div>
+        <div class="pillar-item">
+          <h4><span class="label">Interdisziplinäres Backup.</span></h4>
+          <p>Sie sind bei mir kein „Fall", sondern Teil eines Netzwerks. Wenn Ihr Kiefer die Statik Ihres Rückens beeinflusst, arbeite ich Hand in Hand mit den passenden Therapeut:innen in Halle.</p>
+        </div>
       </div>
-      <p>
-        Wo operative oder restaurative Zahnmedizin nötig wird, arbeite ich nicht selbst am Patienten — sondern koordiniere, begleite und bleibe Ansprechpartnerin. Dafür habe ich über die Jahre ein vertrauensvolles Netzwerk aufgebaut: aus Zahnärztinnen und Zahnärzten, Logopäden, Osteopathen, Hebammen, HNO-, Allgemein- und Kinderärzten.
-      </p>
+
+      <div class="benefit-card">
+        <span class="benefit-label">Ihr Benefit</span>
+        <p>Sie verlassen die Rolle des passiven Patienten. Sie verstehen die Zusammenhänge — und nutzen die Dentosophie als tägliches Training für ein schmerzfreies, aufrechtes Leben.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- Leistungen -->
+<!-- Leistungen — drei Säulen -->
 <section id="leistungen" class="services">
   <div class="services-header reveal">
     <div>
-      <div class="section-eyebrow">Wege</div>
+      <div class="section-eyebrow">Drei Säulen</div>
       <h2 class="section-title">Was der Körper <span class="italic">schon weiß</span> — wenn man zuhört.</h2>
     </div>
     <p class="services-intro">
-      Sechs Betrachtungen. Ein Mensch. Welche davon zu Ihnen gehört, zeigt sich im Gespräch — nie in einem Formular.
+      Drei Säulen. Ein Mensch. Welche davon zu Ihnen gehört, zeigt sich im Gespräch — nie in einem Formular.
     </p>
   </div>
 
@@ -998,70 +1141,46 @@
         <path d="M36 22 Q 38 20 40 22" stroke-linecap="round"/>
       </svg>
       <h3>Dentosophie</h3>
-      <p>Atmung, Zungenlage und Kieferentwicklung in Einklang bringen — mit dem Bioaktivator nach Dr. Montaud. Eine Methode, die nicht formt, sondern erinnert. Für Kinder wie Erwachsene.</p>
+      <p class="service-tagline">Kieferbalance und ganzheitliche Aufrichtung.</p>
+      <p class="service-detail">
+        Anstatt Zähne mit Druck in eine Form zu zwingen, nutzen wir die Dentosophie, um die <strong>funktionelle Balance</strong> aus Atmen, Schlucken und Kauen wiederherzustellen. Der Mundraum wird zum Schlüssel für eine aufrechte Körperhaltung und für psychisches Wohlbefinden. Wir korrigieren nicht nur Fehlstellungen — wir ordnen das System neu.
+      </p>
       <div class="service-arrow"></div>
     </div>
 
     <div class="service reveal">
       <div class="service-num">✦ 02</div>
       <svg class="service-icon" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2">
-        <path d="M22 6 C 14 14 12 22 12 28 C 12 34 16 38 22 38 C 28 38 32 34 32 28 C 32 22 30 14 22 6 Z"/>
-        <path d="M22 14 L 22 38"/>
-        <path d="M22 22 L 16 24 M 22 28 L 16 30 M 22 22 L 28 24 M 22 28 L 28 30"/>
+        <path d="M10 24 Q 10 18 14 16 L 18 14 L 20 18 L 20 30 L 16 32 Q 12 30 10 24 Z"/>
+        <path d="M34 24 Q 34 18 30 16 L 26 14 L 24 18 L 24 30 L 28 32 Q 32 30 34 24 Z"/>
+        <path d="M20 20 L 24 20 M 20 24 L 24 24"/>
       </svg>
-      <h3>Umweltzahnmedizin</h3>
-      <p>Der Mund als Tor zum Körper — und manchmal auch als Eintrittspforte dessen, was ihn belastet. Mögliche Belastungen durch Materialien oder Metalle und Hinweise auf stille Entzündungen erfassen — nach DEGUZ-Empfehlungen, in Abstimmung mit ärztlicher Diagnostik.</p>
+      <h3>Kinesiologie</h3>
+      <p class="service-tagline">Den Körper als Wegweiser für die Ursachendiagnostik nutzen.</p>
+      <p class="service-detail">
+        Manchmal weiß der Körper mehr als der Verstand. Mit <strong>funktionellen Muskeltests</strong> finden wir heraus, welche Belastungen oder Blockaden Ihr System schwächen. So stellen wir sicher, dass jeder Schritt — von der Materialwahl bis zur Kieferkorrektur — auf Ihre individuelle Biologie abgestimmt ist.
+      </p>
+      <p class="service-disclaimer">
+        Die angewandte Kinesiologie ist kein wissenschaftlich anerkanntes Diagnoseverfahren und ersetzt keine ärztliche Diagnostik.
+      </p>
       <div class="service-arrow"></div>
     </div>
 
     <div class="service reveal">
       <div class="service-num">✦ 03</div>
       <svg class="service-icon" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2">
-        <path d="M10 24 Q 10 18 14 16 L 18 14 L 20 18 L 20 30 L 16 32 Q 12 30 10 24 Z"/>
-        <path d="M34 24 Q 34 18 30 16 L 26 14 L 24 18 L 24 30 L 28 32 Q 32 30 34 24 Z"/>
-        <path d="M20 20 L 24 20 M 20 24 L 24 24"/>
+        <path d="M22 6 C 14 14 12 22 12 28 C 12 34 16 38 22 38 C 28 38 32 34 32 28 C 32 22 30 14 22 6 Z"/>
+        <path d="M22 14 L 22 38"/>
+        <path d="M22 22 L 16 24 M 22 28 L 16 30 M 22 22 L 28 24 M 22 28 L 28 30"/>
       </svg>
-      <h3>Angewandte Kinesiologie</h3>
-      <p>Ein Gespräch mit dem Körper über den Muskel — leise, präzise, respektvoll. Hinweise auf individuelle Verträglichkeiten und Reaktionen sammeln. Die angewandte Kinesiologie ist kein wissenschaftlich anerkanntes Diagnoseverfahren; sie ersetzt keine zahnärztliche oder ärztliche Diagnostik.</p>
-      <div class="service-arrow"></div>
-    </div>
-
-    <div class="service reveal">
-      <div class="service-num">✦ 04</div>
-      <svg class="service-icon" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2">
-        <path d="M8 22 Q 14 14 22 14 Q 30 14 36 22 Q 30 30 22 30 Q 14 30 8 22 Z"/>
-        <path d="M18 22 Q 22 18 26 22 Q 22 26 18 22 Z" fill="currentColor" opacity="0.2"/>
-        <path d="M22 14 L 22 8 M 16 14 L 14 10 M 28 14 L 30 10"/>
-      </svg>
-      <h3>Myofunktionelle Therapie</h3>
-      <p>Die Zunge ist eine Form­gestalterin — für den Kiefer, die Atmung, die Haltung. Übungen, die der Mund wiederlernen darf. Oft in Begleitung der logopädischen Arbeit.</p>
-      <div class="service-arrow"></div>
-    </div>
-
-    <div class="service reveal">
-      <div class="service-num">✦ 05</div>
-      <svg class="service-icon" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2">
-        <circle cx="16" cy="16" r="6"/>
-        <circle cx="30" cy="16" r="4"/>
-        <circle cx="22" cy="30" r="5"/>
-        <path d="M20 20 L 26 28 M 26 18 L 23 26"/>
-        <path d="M12 34 L 18 34 L 15 30 Z" fill="currentColor" opacity="0.3"/>
-      </svg>
-      <h3>Biokompatibilität</h3>
-      <p>Bevor ein Material in den Körper einzieht, verdient es eine höfliche Anfrage. Verträglichkeit als laborgestützter Test (LTT, Epikutan, Speichelanalysen) — auf Wunsch ergänzt um kinesiologische Hinweise. Letztere sind wissenschaftlich nicht anerkannt und nicht ersatzweise einzusetzen.</p>
-      <div class="service-arrow"></div>
-    </div>
-
-    <div class="service reveal">
-      <div class="service-num">✦ 06</div>
-      <svg class="service-icon" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2">
-        <circle cx="20" cy="20" r="10"/>
-        <path d="M28 28 L 36 36" stroke-linecap="round"/>
-        <circle cx="20" cy="20" r="3" fill="currentColor"/>
-        <path d="M14 14 L 16 16 M 26 14 L 24 16"/>
-      </svg>
-      <h3>Herd- &amp; Störfeldsuche</h3>
-      <p>Im komplementärmedizinischen Konzept der Herd- und Störfeldlehre werden devitale Zähne, alte Narben oder belastete Materialien als mögliche Mit-Belastungsfaktoren betrachtet. Dieses Konzept ist wissenschaftlich umstritten und nicht Teil der zahnmedizinischen Regelversorgung. Wenn Sie diese Sichtweise für sich prüfen möchten, gehe ich strukturiert vor — im Dialog mit umweltmedizinisch arbeitenden Kolleg:innen und ohne Heilversprechen.</p>
+      <h3>Umweltzahnmedizin</h3>
+      <p class="service-tagline">Biokompatible Lösungen für ein störungsfreies Immunsystem.</p>
+      <p class="service-detail">
+        Chronische Entzündungen und Materialunverträglichkeiten können den gesamten Körper belasten. Als Umweltzahnmedizinerin achten wir auf <strong>absolute Biokompatibilität</strong>: metallfreie Alternativen, sorgfältige Materialprüfung und das Aufspüren möglicher Störfelder — damit Ihr Immunsystem zur Ruhe kommen kann und Sie Ihre volle Energie zurückgewinnen.
+      </p>
+      <p class="service-disclaimer">
+        Nach DEGUZ-Empfehlungen, in Abstimmung mit ärztlicher Diagnostik. Komplementärmedizinische Konzepte sind kein Teil der Regelversorgung.
+      </p>
       <div class="service-arrow"></div>
     </div>
   </div>
@@ -1072,12 +1191,12 @@
   <div class="network-inner">
     <div class="network-text reveal">
       <div class="section-eyebrow">Netzwerk</div>
-      <h2 class="section-title">Niemand heilt <span class="rose">allein</span>.</h2>
+      <h2 class="section-title">Gesundheit braucht <span class="rose">Zusammenarbeit</span>.</h2>
       <p>
-        Der Mund berührt zu viele Systeme, als dass eine Disziplin ihm allein gerecht werden könnte. Deshalb ist meine Praxis bewusst als Knotenpunkt konzipiert — nicht als Einzelpraxis, die alles wissen müsste.
+        Wahre Heilung endet nicht am Kieferrand. Ich arbeite eng mit Osteopath:innen und Therapeut:innen zusammen, um Sie integrativ und nachhaltig zu unterstützen.
       </p>
       <p>
-        Ich arbeite mit ausgewählten Kolleginnen und Kollegen zusammen, die in ihrem Feld exzellent sind und dieselbe Haltung teilen: Den Menschen als Ganzes zu sehen, bevor man auf ein Symptom reagiert.
+        Meine Praxis ist bewusst als Knotenpunkt konzipiert — nicht als Einzelpraxis, die alles wissen müsste. Ich arbeite mit ausgewählten Kolleg:innen, die in ihrem Feld exzellent sind und dieselbe Haltung teilen: Den Menschen als Ganzes zu sehen, bevor man auf ein Symptom reagiert.
       </p>
       <div class="network-list">
         <div class="network-list-item">Zahnärzt:innen</div>
@@ -1095,20 +1214,20 @@
       <svg viewBox="0 0 560 560" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <radialGradient id="centerGrad" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stop-color="#2E6677"/>
-            <stop offset="100%" stop-color="#143642"/>
+            <stop offset="0%" stop-color="#76A1AC"/>
+            <stop offset="100%" stop-color="#3D6873"/>
           </radialGradient>
           <radialGradient id="nodeGrad" cx="50%" cy="30%" r="70%">
-            <stop offset="0%" stop-color="#FAF5F3"/>
-            <stop offset="100%" stop-color="#F3E2E2"/>
+            <stop offset="0%" stop-color="#FBF7F4"/>
+            <stop offset="100%" stop-color="#F4E4E4"/>
           </radialGradient>
         </defs>
 
-        <circle cx="280" cy="280" r="240" fill="none" stroke="#1F4B5A" stroke-width="0.5" opacity="0.15"/>
-        <circle cx="280" cy="280" r="200" fill="none" stroke="#B88B91" stroke-width="0.5" opacity="0.25"/>
-        <circle cx="280" cy="280" r="160" fill="none" stroke="#1F4B5A" stroke-width="0.5" opacity="0.2" stroke-dasharray="2 4"/>
+        <circle cx="280" cy="280" r="240" fill="none" stroke="#3D6873" stroke-width="0.5" opacity="0.15"/>
+        <circle cx="280" cy="280" r="200" fill="none" stroke="#BF9499" stroke-width="0.5" opacity="0.25"/>
+        <circle cx="280" cy="280" r="160" fill="none" stroke="#3D6873" stroke-width="0.5" opacity="0.2" stroke-dasharray="2 4"/>
 
-        <g stroke="#1F4B5A" stroke-width="0.6" opacity="0.3">
+        <g stroke="#3D6873" stroke-width="0.6" opacity="0.3">
           <line x1="280" y1="280" x2="280" y2="80"/>
           <line x1="280" y1="280" x2="421" y2="139"/>
           <line x1="280" y1="280" x2="480" y2="280"/>
@@ -1120,51 +1239,51 @@
         </g>
 
         <circle cx="280" cy="280" r="72" fill="url(#centerGrad)"/>
-        <circle cx="280" cy="280" r="72" fill="none" stroke="#D4A9AC" stroke-width="0.8" opacity="0.5"/>
+        <circle cx="280" cy="280" r="72" fill="none" stroke="#DCB5B8" stroke-width="0.8" opacity="0.5"/>
         <text x="280" y="274" text-anchor="middle" fill="#F3E2E2" font-family="Fraunces, serif" font-size="15" font-style="italic" font-weight="300">Praxis</text>
-        <text x="280" y="294" text-anchor="middle" fill="#D4A9AC" font-family="DM Sans, sans-serif" font-size="11" letter-spacing="0.15em">VON KOCH</text>
+        <text x="280" y="294" text-anchor="middle" fill="#DCB5B8" font-family="DM Sans, sans-serif" font-size="11" letter-spacing="0.15em">VON KOCH</text>
 
         <g>
-          <circle cx="280" cy="80" r="42" fill="url(#nodeGrad)" stroke="#1F4B5A" stroke-width="1"/>
-          <text x="280" y="78" text-anchor="middle" fill="#1A2128" font-family="Fraunces, serif" font-size="13">Zahnärzt:</text>
-          <text x="280" y="93" text-anchor="middle" fill="#1A2128" font-family="Fraunces, serif" font-size="13">innen</text>
+          <circle cx="280" cy="80" r="42" fill="url(#nodeGrad)" stroke="#3D6873" stroke-width="1"/>
+          <text x="280" y="78" text-anchor="middle" fill="#1F2730" font-family="Fraunces, serif" font-size="13">Zahnärzt:</text>
+          <text x="280" y="93" text-anchor="middle" fill="#1F2730" font-family="Fraunces, serif" font-size="13">innen</text>
         </g>
         <g>
-          <circle cx="421" cy="139" r="42" fill="url(#nodeGrad)" stroke="#1F4B5A" stroke-width="1"/>
-          <text x="421" y="143" text-anchor="middle" fill="#1A2128" font-family="Fraunces, serif" font-size="13">HNO</text>
+          <circle cx="421" cy="139" r="42" fill="url(#nodeGrad)" stroke="#3D6873" stroke-width="1"/>
+          <text x="421" y="143" text-anchor="middle" fill="#1F2730" font-family="Fraunces, serif" font-size="13">HNO</text>
         </g>
         <g>
-          <circle cx="480" cy="280" r="42" fill="url(#nodeGrad)" stroke="#1F4B5A" stroke-width="1"/>
-          <text x="480" y="277" text-anchor="middle" fill="#1A2128" font-family="Fraunces, serif" font-size="13">Logo-</text>
-          <text x="480" y="292" text-anchor="middle" fill="#1A2128" font-family="Fraunces, serif" font-size="13">pädie</text>
+          <circle cx="480" cy="280" r="42" fill="url(#nodeGrad)" stroke="#3D6873" stroke-width="1"/>
+          <text x="480" y="277" text-anchor="middle" fill="#1F2730" font-family="Fraunces, serif" font-size="13">Logo-</text>
+          <text x="480" y="292" text-anchor="middle" fill="#1F2730" font-family="Fraunces, serif" font-size="13">pädie</text>
         </g>
         <g>
-          <circle cx="421" cy="421" r="42" fill="url(#nodeGrad)" stroke="#1F4B5A" stroke-width="1"/>
-          <text x="421" y="418" text-anchor="middle" fill="#1A2128" font-family="Fraunces, serif" font-size="13">Osteo-</text>
-          <text x="421" y="433" text-anchor="middle" fill="#1A2128" font-family="Fraunces, serif" font-size="13">pathie</text>
+          <circle cx="421" cy="421" r="42" fill="url(#nodeGrad)" stroke="#3D6873" stroke-width="1"/>
+          <text x="421" y="418" text-anchor="middle" fill="#1F2730" font-family="Fraunces, serif" font-size="13">Osteo-</text>
+          <text x="421" y="433" text-anchor="middle" fill="#1F2730" font-family="Fraunces, serif" font-size="13">pathie</text>
         </g>
         <g>
-          <circle cx="280" cy="480" r="42" fill="url(#nodeGrad)" stroke="#1F4B5A" stroke-width="1"/>
-          <text x="280" y="478" text-anchor="middle" fill="#1A2128" font-family="Fraunces, serif" font-size="13">Heb-</text>
-          <text x="280" y="493" text-anchor="middle" fill="#1A2128" font-family="Fraunces, serif" font-size="13">ammen</text>
+          <circle cx="280" cy="480" r="42" fill="url(#nodeGrad)" stroke="#3D6873" stroke-width="1"/>
+          <text x="280" y="478" text-anchor="middle" fill="#1F2730" font-family="Fraunces, serif" font-size="13">Heb-</text>
+          <text x="280" y="493" text-anchor="middle" fill="#1F2730" font-family="Fraunces, serif" font-size="13">ammen</text>
         </g>
         <g>
-          <circle cx="139" cy="421" r="42" fill="url(#nodeGrad)" stroke="#1F4B5A" stroke-width="1"/>
-          <text x="139" y="418" text-anchor="middle" fill="#1A2128" font-family="Fraunces, serif" font-size="13">Kinder-</text>
-          <text x="139" y="433" text-anchor="middle" fill="#1A2128" font-family="Fraunces, serif" font-size="13">ärzt:innen</text>
+          <circle cx="139" cy="421" r="42" fill="url(#nodeGrad)" stroke="#3D6873" stroke-width="1"/>
+          <text x="139" y="418" text-anchor="middle" fill="#1F2730" font-family="Fraunces, serif" font-size="13">Kinder-</text>
+          <text x="139" y="433" text-anchor="middle" fill="#1F2730" font-family="Fraunces, serif" font-size="13">ärzt:innen</text>
         </g>
         <g>
-          <circle cx="80" cy="280" r="42" fill="url(#nodeGrad)" stroke="#1F4B5A" stroke-width="1"/>
-          <text x="80" y="277" text-anchor="middle" fill="#1A2128" font-family="Fraunces, serif" font-size="13">Allg.-</text>
-          <text x="80" y="292" text-anchor="middle" fill="#1A2128" font-family="Fraunces, serif" font-size="13">medizin</text>
+          <circle cx="80" cy="280" r="42" fill="url(#nodeGrad)" stroke="#3D6873" stroke-width="1"/>
+          <text x="80" y="277" text-anchor="middle" fill="#1F2730" font-family="Fraunces, serif" font-size="13">Allg.-</text>
+          <text x="80" y="292" text-anchor="middle" fill="#1F2730" font-family="Fraunces, serif" font-size="13">medizin</text>
         </g>
         <g>
-          <circle cx="139" cy="139" r="42" fill="url(#nodeGrad)" stroke="#1F4B5A" stroke-width="1"/>
-          <text x="139" y="137" text-anchor="middle" fill="#1A2128" font-family="Fraunces, serif" font-size="13">Ernähr.</text>
-          <text x="139" y="152" text-anchor="middle" fill="#1A2128" font-family="Fraunces, serif" font-size="13">Mikrobiom</text>
+          <circle cx="139" cy="139" r="42" fill="url(#nodeGrad)" stroke="#3D6873" stroke-width="1"/>
+          <text x="139" y="137" text-anchor="middle" fill="#1F2730" font-family="Fraunces, serif" font-size="13">Ernähr.</text>
+          <text x="139" y="152" text-anchor="middle" fill="#1F2730" font-family="Fraunces, serif" font-size="13">Mikrobiom</text>
         </g>
 
-        <g fill="#B88B91">
+        <g fill="#BF9499">
           <text x="280" y="40" text-anchor="middle" font-family="Fraunces, serif" font-size="16">✦</text>
           <text x="520" y="286" text-anchor="middle" font-family="Fraunces, serif" font-size="12">✧</text>
           <text x="280" y="528" text-anchor="middle" font-family="Fraunces, serif" font-size="16">✦</text>
@@ -1281,10 +1400,10 @@
     </div>
 
     <div class="contact-cta reveal">
-      <h3>Beginnen wir mit einem <span class="italic">Gespräch</span>.</h3>
+      <h3>Lassen Sie uns gemeinsam <span class="italic">hinsehen</span>.</h3>
       <p>Das Erstgespräch dauert 60 Minuten. Wir klären gemeinsam Ihr Anliegen, mögliche Wege und ob eine Begleitung durch meine Praxis für Sie stimmig ist.</p>
-      <a href="#" class="btn-primary">
-        Terminanfrage senden
+      <a href="mailto:praxis@vonkoch-zahnmedizin.de" class="btn-primary">
+        Termin vereinbaren
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5">
           <path d="M1 7h12M8 2l5 5-5 5"/>
         </svg>
